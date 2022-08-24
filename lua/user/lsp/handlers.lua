@@ -76,6 +76,11 @@ M.on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
   end
 
+  -- Maybe this is not necessary
+  if client.name == "eslint" then
+    client.resolved_capabilities.document_formatting = true
+  end
+
   if client.name == "sumneko_lua" then
     client.resolved_capabilities.document_formatting = false
   end
